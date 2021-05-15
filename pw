@@ -1,0 +1,11 @@
+powershell: 
+
+$profile
+test-path $profile ? false = New-Item -path $profile -type file -force
+
+function Prompt
+{
+    $promptString = "groberto -"
+    Write-Host $promptString -NoNewline -ForegroundColor red
+    return " "
+} 
