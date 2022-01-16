@@ -1,6 +1,7 @@
 powershell: 
 
 $profile
+Set-ExecutionPolicy RemoteSigned
 test-path $profile ? false = New-Item -path $profile -type file -force
 
 function Prompt
