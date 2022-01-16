@@ -3,10 +3,11 @@ powershell:
 $profile
 Set-ExecutionPolicy RemoteSigned
 test-path $profile ? false = New-Item -path $profile -type file -force
+notepad $PROFILE
 
 function Prompt
 {
-    $promptString = "groberto » "
+    $promptString = "Rvgallego » "
     Write-Host $promptString -NoNewline -ForegroundColor red
     return " "
 } 
