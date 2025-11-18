@@ -1,0 +1,45 @@
+ {
+    "key": "cmd+shift+k",
+    "command": "workbench.action.closeActivePinnedEditor",
+    "when": "editorFocus && !terminalFocus && !filesExplorerFocus"
+  },
+  {
+    "key": "cmd+shift+k",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus && terminalHasBeenCreated && !filesExplorerFocus"
+  },
+  {
+    "key": "cmd+shift+k",
+    "command": "workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated"
+  },
+  {
+    "key": "cmd+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+shift+k",
+    "command": "workbench.action.closeGroup",
+    "when": "!terminalFocus && activeEditorGroupEmpty && multipleEditorGroups && !filesExplorerFocus"
+  },
+  {
+    "key": "cmd+shift+k",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !editorFocus && !terminalFocus"
+  },
+  {
+    "key": "cmd+w",
+    "command": "-workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  {
+    "key": "cmd+shift+k",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "activeEditor && !terminalFocus && !filesExplorerFocus && !searchViewletFocus && !scmViewletFocus && !referencesViewVisible && !settingsEditorFocus && !keybindingsEditorFocus"
+  },
+  {
+    "key": "cmd+shift+k",
+    "command": "workbench.action.closeEditorsInGroup",
+    "when": "!editorIsOpen && !terminalFocus && activeEditorGroupEmpty && !filesExplorerFocus && !searchViewletFocus && !scmViewletFocus && !referencesViewVisible && !settingsEditorFocus && !keybindingsEditorFocus"
+  },
