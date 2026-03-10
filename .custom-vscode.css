@@ -1,0 +1,57 @@
+.window-appicon {
+  display: none !important;
+}
+
+.window-title {
+  display: none !important;
+}
+
+.letterpress {
+  display: none !important;
+}
+
+.line-numbers {
+  position: relative !important;
+  width: 30px !important;
+}
+
+.monaco-tl-indent {
+  color: white !important;
+}
+
+.indent-guide {
+  display: none !important;
+}
+
+/* Command Palette */
+.quick-input-widget {
+  top: 25vh !important;
+  border-radius: 6px !important;
+  border-color: #a9b1d6 !important;
+}
+
+/* Remove background for lists */
+.monaco-list-rows {
+  background: transparent !important;
+}
+
+/* List hover */
+.monaco-list-row:hover {
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.command-center-center {
+  width: auto !important;
+}
+
+.decoration-icon {
+  display: none !important;
+}
+
+.monaco-list-row force-no-hover {
+  display: none !important;
+}
+
+.title-label > h2 {
+  display: none !important;
+}
