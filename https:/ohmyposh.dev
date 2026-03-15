@@ -1,0 +1,115 @@
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/catppuccin_mocha.omp.json)"
+fi
+
+source <(fzf --zsh)
+
+git config --global alias.modified "diff --name-only HEAD"
+
+export LDFLAGS="-L/opt/homebrew/opt/curl/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/curl/include"
+
+HISTFILE=~/.zsh_history
+export HISTFILESIZE=10000000
+export HISTSIZE=10000000
+export SAVEHIST=500000
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY 
+setopt EXTENDED_HISTORY 
+setopt APPENDHISTORY 
+export HISTTIMEFORMAT="%d/%m/%Y %H:%M] "
+
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+
+alias pip="pip3"
+alias python="python3"
+alias vim="nvim"
+
+# alias vsc='f(){ touch "$1"; code -r "$1"; }; f'
+alias vsc='f(){ 
+  if [ -f "$1" ]; then
+    code -r "$1"
+  else
+    echo "file not found: $1"
+  fi
+}; f'
+
+
+----
+
+
+~/.config/ohmyposh/catppuccin_mocha.omp.json
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+        "os": "#ACB0BE",
+        "closer": "p:os",
+        "pink": "#F5C2E7",
+        "lavender": "#B4BEFE",
+        "blue":  "#89B4FA"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "p:os",
+          "style": "plain",
+          "template": "{{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "foreground": "p:blue",
+          "style": "plain",
+          "template": "{{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "p:lavender",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "template": "{{ .HEAD }} ",
+          "style": "plain",
+          "type": "git"
+        },
+        {
+          "style": "plain",
+          "foreground": "p:closer",
+          "template": "\uf105",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "p:pink",
+          "properties": {
+            "always_enabled": false,
+            "threshold": 500,
+            "style": "austin"
+          },
+          "style": "plain",
+          "template": " \ueba2  {{ .FormattedMs }} ",
+          "type": "executiontime"
+        }
+      ],
+      "type": "rprompt"
+    }
+  ],
+  "final_space": true,
+  "version": 3
+}
